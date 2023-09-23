@@ -6,7 +6,7 @@ class Pedido {
   List<Produto> produtos;
   StatusPedido status;
 
-  Pedido(this.cliente, this.produtos, this.status);
+  Pedido({required this.cliente}, {required this.produtos}, {required this.status});
 
   double getValorTotal() {
     // var tot = 0.0;
