@@ -1,3 +1,4 @@
+import 'package:revisao/domain/endereco.dart';
 import 'package:revisao/domain/produto.dart';
 import 'package:revisao/domain/pedido.dart';
 import 'package:revisao/domain/pessoa.dart';
@@ -5,8 +6,11 @@ import 'package:revisao/revisao.dart';
 import 'package:test/test.dart';
 
 void main() {
+  var endereco1 = Endereco('00000-000', '999', 'Rua FulanoDeTal', 'Apto 999',
+      'Centro', 'Maringá', 'PR');
+
   var cliente1 = Pessoa('Caio', '000.000.000-75', '67 99999-9999',
-      'chrstream@hotmail.com', 'Maringá-PR');
+      'chrstream@hotmail.com', endereco1);
 
   var produto1 = Produto(
       'Aspirador de pó',
