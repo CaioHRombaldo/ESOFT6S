@@ -9,11 +9,14 @@ class Pedido {
   Pedido(this.cliente, this.produtos, this.status);
 
   double getValorTotal() {
-    var tot = 0.0;
-    for (var produto in produtos) {
-      tot += produto.valor;
-    }
-    return tot;
+    // var tot = 0.0;
+    // for (var produto in produtos) {
+    //   tot += produto.valor;
+    // }
+    // return tot;
+
+    return produtos.fold(
+        0.0, (previousValue, element) => previousValue + element.valor);
   }
 
   int getQuantidade() {
