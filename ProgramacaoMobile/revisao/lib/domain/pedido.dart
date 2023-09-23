@@ -9,17 +9,25 @@ class Pedido {
   Pedido(this.cliente, this.produtos, this.status);
 
   double getValorTotal() {
-    return 999.9;
+    var tot = 0.0;
+    for (var produto in produtos) {
+      tot += produto.valor;
+    }
+    return tot;
   }
 
   int getQuantidade() {
-    return 999;
+    return produtos.length;
   }
 }
 
 enum StatusPedido {
-  valor_default,
-  aguardando_pagamento,
-  processando_pagamento,
-  pago
+  valorDefault(sigla: "I"),
+  aguardandoPagamento(sigla: "AP"),
+  processandoPagamento(sigla: "PP"),
+  pago(sigla: "P");
+
+  const StatusPedido({required this.sigla});
+
+  final String sigla;
 }
